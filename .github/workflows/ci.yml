@@ -13,7 +13,7 @@ jobs:
       - uses: oven-sh/setup-bun@v2
 
       - run: bun install --frozen-lockfile
-      - run: bun run format:check
+      - run: bun run format
       - run: bun run lint
       - run: bun run check
 
@@ -22,9 +22,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v5
-      - uses: oven-sh/setup-bun@v2
-
+      - uses: oven-sh/setup-bun@v2      
       - run: bun install --frozen-lockfile
+      - run: bunx playwright install
       - run: bun run test:unit
 
   playwright:
