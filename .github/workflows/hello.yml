@@ -55,5 +55,5 @@ jobs:
       - name: Print Hello World Log
         run: echo "Hello World!"
 
-      - another: Print Another Log
+      - name: Print Another Log
         run: echo "Another..."
