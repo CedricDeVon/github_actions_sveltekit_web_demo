@@ -1,0 +1,59 @@
+name: Hello World
+
+on:
+  push:
+    branches:
+      - main
+      # - dev
+      # - head
+      # - feature/*
+      # - another/**
+
+    branches-ignore:
+      - exp
+
+    tags:
+      - '*'
+      # - 'v*'
+
+    paths:
+      # - 'src/**'
+
+    paths-ignore:
+      # - '.env'
+
+  pull_request:
+    branches:
+      - main
+
+    types:
+      - opened
+      - synchrnoize
+      - reopened
+
+  schedule:
+    - cron: '0 0 * * *'
+
+  release:
+    types:
+      # - published
+    
+  workflow_dispatch:
+    inputs:
+      environment:
+        required: true
+        type: choice
+        options:
+          - development
+          - staging
+          - production
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello World Log
+        run: echo "Hello World!"
+
+      - another: Print Another Log
+        run: echo "Another..."
