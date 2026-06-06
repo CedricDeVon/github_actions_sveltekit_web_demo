@@ -9,8 +9,8 @@ on:
       # - feature/*
       # - another/**
 
-    branches-ignore:
-      - exp
+    # branches-ignore:
+    #  - exp
 
     tags:
       - '*'
