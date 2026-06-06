@@ -28,7 +28,7 @@ on:
 
     types:
       - opened
-      - synchrnoize
+      - synchronize
       - reopened
 
   schedule:
@@ -36,7 +36,7 @@ on:
 
   release:
     types:
-      # - published
+      - published
     
   workflow_dispatch:
     inputs:
